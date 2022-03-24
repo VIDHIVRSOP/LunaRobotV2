@@ -14,7 +14,7 @@ async def awake(event):
   tai = event.sender.first_name
   LUNA = "**Hoi Darling 🥲, I'm [Sofia🧚‍♀️](https://t.me/Sofia_op_bot)!** \n\n"
   LUNA += "🥀 **I'm Working Properly** \n\n"
-  LUNA += "🥀 **My Master : [Miss-VimDhi🤍](https://t.me/Legend_Vidhi_Vrs)** \n\n"
+  LUNA += "🥀 **My Master : [Miss-Vidhi🤍](https://t.me/Legend_Vidhi_Vrs)** \n\n"
   LUNA += f"🥀 **Telethon Version : {tlhver}** \n\n"
   LUNA += f"🥀 **Pyrogram Version : {pyrover}** \n\n"
   LUNA += "**Thanks For Adding Me Here ❤️**"
