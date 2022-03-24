@@ -84,7 +84,7 @@ PM_START_TEXT = """
 
 buttons = [
     [
-        InlineKeyboardButton(text="➕ Add Luna To Your group ➕", url="http://t.me/Sofia_op_bot?startgroup=true"),
+        InlineKeyboardButton(text="➕ Add Sofia To Your group ➕", url="http://t.me/Sofia_op_bot?startgroup=true"),
     ],
     [
         InlineKeyboardButton(text="About", callback_data="luna_"),
@@ -110,8 +110,7 @@ If you want to report any bugs or need any help with setting up Alina, reach us 
 
 
 
-DONATE_STRING = """Hehe, senang mendengar Anda ingin menyumbang!
- [klick disini](https://t.me/zeinzo_1) ❤️
+DONATE_STRING = """`ME TO KHUD ITNI HOMT HU DONATION KI KYA JRURT🥲😁🤣,`
 """
 
 IMPORTED = {}
@@ -482,15 +481,7 @@ def luna_about_callback(update, context):
             f"\nHᴇʀᴇ Sᴏᴍᴇ Dᴇᴠᴇʟᴏᴘᴇʀs Hᴇʟᴘɪɴɢ Iɴ Mᴀᴋɪɴɢ Tʜᴇ Lᴜɴᴀ",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [
-                 [
-                    InlineKeyboardButton(text="Alina", url="https://t.me/rizexx"),
-                    InlineKeyboardButton(text="Nao", url="https://t.me/xgothboi"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Yui", url="https://t.me/Badboyanim"),
-                    InlineKeyboardButton(text="Luna", url="https://t.me/tdrki_1"),
-                 ],
+                [                
                  [
                     InlineKeyboardButton(text="Back", callback_data="luna_basichelp"),
                  
@@ -525,11 +516,11 @@ def luna_about_callback(update, context):
     elif query.data == "luna_asu":
         query.message.edit_text(
             text=f"｢ Admin Permissions 」\n"
-                     f"\nTo avoid slowing down, Luna caches admin rights for each user. This cache lasts about 10 minutes; this may change in the future. This means that if you promote a user manually (without using the /promote command), Luna will only find out ~10 minutes later.\n"
+                     f"\nTo avoid slowing down, Sofia caches admin rights for each user. This cache lasts about 10 minutes; this may change in the future. This means that if you promote a user manually (without using the /promote command), Luna will only find out ~10 minutes later.\n"
                     f"\nIf you want to update them immediately, you can use the /admincache or /reload command, that'll force Luna to check who the admins are again and their permissions\n"
                     f"\nIf you are getting a message saying:\nYou must be this chat administrator to perform this action!\n"
-                    f"\nThis has nothing to do with Luna's rights; this is all about YOUR permissions as an admin. Luna respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with Luna. Similarly, to change Luna settings, you need to have the Change group info permission.\n"
-                    f"\nThe message very clearly states that you need these rights - not Luna.",
+                    f"\nThis has nothing to do with Sofia's rights; this is all about YOUR permissions as an admin. Luna respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with Luna. Similarly, to change Luna settings, you need to have the Change group info permission.\n"
+                    f"\nThe message very clearly states that you need these rights - not Sofia.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -562,7 +553,7 @@ def luna_about_callback(update, context):
                 f"\n✪ If someone is spamming your group, you can use report feature from your Telegram Client."
                 f"\n✪ Make sure antiflood is enabled, so that users cannot flood/spam your chat."
                 f"\n✪ Do not spam commands, buttons, or anything in bot PM, else you will be Ignored by bot or Gbanned."
-                f"\n✪ If you need to ask anything about this bot or you need help, reach us at @lunaXresso"
+                f"\n✪ If you need to ask anything about this bot or you need help, reach us at @SOFIASUPPORT"
                 f"\n✪ Make sure you read rules and follow them when you join Support Chat."
                 f"\n✪ Spamming in Support Chat, will reward you GBAN and reported to Telegram as well.\n"
                 f"\nTerms & Conditions can be changed anytime.",
@@ -580,7 +571,7 @@ def luna_about_callback(update, context):
 
     elif query.data == "luna_angjay":
         query.message.edit_text(
-            text=f"Luna is a powerful bot for managing groups with additional features.\n"
+            text=f"Sofia is a powerful bot for managing groups with additional features.\n"
               f"\nLuna's Licensed Under The GNU (General Public License v3.0)\n"
               f"\nIf you have any question about Luna,"
               f"\nreach us at Support Chat.",
@@ -590,7 +581,7 @@ def luna_about_callback(update, context):
                 [
                   [
                      InlineKeyboardButton(text="Back", callback_data="luna_puqi"),
-                     InlineKeyboardButton(text="☎️ Support", url=f"https://t.me/lunaXresso"),
+                     InlineKeyboardButton(text="☎️ Support", url=f"https://t.me/SOFIASUPPORT"),
                   ]
                 ]
             ),
@@ -647,8 +638,8 @@ def get_help(update: Update, context: CallbackContext):
                 ),
             )
             return
-        update.effective_message.reply_text(
-            "Contact me in PM to get the list of possible commands.",
+        update.effective_message.reply_video(SOFIA_HOT_IMG,
+            caption="Contact me in PM to get the list of possible commands.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -656,13 +647,7 @@ def get_help(update: Update, context: CallbackContext):
                             text="Hᴇʟᴘ ❔",
                             url="t.me/{}?start=help".format(context.bot.username),
                         )
-                    ],
-                    [
-                        InlineKeyboardButton(
-                            text="Sᴜᴘᴘᴏʀᴛ Cʜᴀᴛ 📢 ",
-                            url="https://t.me/{}".format(SUPPORT_CHAT),
-                        )
-                    ],
+                    ],                   
                 ]
             ),
         )
@@ -903,7 +888,8 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.send_photo(f"@{SUPPORT_CHAT}", SOFIA_HOT_IMG, caption = "Jinda Hu Janemon 🥀",)
+            dispatcher.bot.send_photo(f"@{SUPPORT_CHAT}", SOFIA_HOT_IMG, caption = "zinda Hu Janemon 🥀", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Moi-Owner🥀", url="tg://user?id=5029525372"),
+                                                                                                                                              InlineKeyboardButton(text="Janemon🧚‍♀️", url="tg://user?id=5072650671")],])
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
