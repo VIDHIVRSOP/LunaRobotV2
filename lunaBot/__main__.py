@@ -99,6 +99,12 @@ buttons = [
     ],
 ]
 
+AAAH_HEHE = [
+    [
+        InlineKeyboardButton(text="Moi-Owner🥀", url="tg://user?id=5029525372"),
+        InlineKeyboardButton(text="Janemon🧚‍♀️", url="tg://user?id=5072650671"),
+    ],
+]
 
 HELP_STRINGS = """
 **Main commands:**  [ㅤ](https://telegra.ph/file/1895e25b7f5e3e7bddfc4.jpg)
@@ -469,9 +475,8 @@ def luna_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Back", callback_data="luna_basichelp"),
-                 
-                 ]
+                    InlineKeyboardButton(text="Back", callback_data="luna_basichelp"),               
+                 ],
                 ]
             ),
         )
@@ -483,9 +488,8 @@ def luna_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [                
                  [
-                    InlineKeyboardButton(text="Back", callback_data="luna_basichelp"),
-                 
-                 ]
+                    InlineKeyboardButton(text="Back", callback_data="luna_basichelp"),               
+                 ],
                 ]
             ),
         )
@@ -646,7 +650,7 @@ def get_help(update: Update, context: CallbackContext):
                         InlineKeyboardButton(
                             text="Hᴇʟᴘ ❔",
                             url="t.me/{}?start=help".format(context.bot.username),
-                        )
+                        ),
                     ],                   
                 ]
             ),
@@ -888,8 +892,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.send_photo(f"@{SUPPORT_CHAT}", SOFIA_HOT_IMG, caption = "zinda Hu Janemon 🥀", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Moi-Owner🥀", url="tg://user?id=5029525372"),
-                                                                                                                                              InlineKeyboardButton(text="Janemon🧚‍♀️", url="tg://user?id=5072650671")],])
+            dispatcher.bot.send_photo(f"@{SUPPORT_CHAT}", SOFIA_HOT_IMG, caption = "zinda Hu Janemon 🥀", reply_markup=InlineKeyboardMarkup(AAAH_HEHE),)
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
