@@ -72,10 +72,10 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-LUNA_IMG = "https://telegra.ph/file/7c3c26e0ed938aec91209.jpg"
+SOFIA_HOT_IMG = "https://telegra.ph/file/579ac3eb50875d4ac4733.jpg"
 
 PM_START_TEXT = """
-**hey I am Luna Robot** [ㅤ](https://telegra.ph/file/1895e25b7f5e3e7bddfc4.jpg)
+**hey I am Sofia Robot** [ㅤ](https://telegra.ph/file/579ac3eb50875d4ac4733.jpg)
 ️➖➖➖➖➖➖➖➖➖➖➖➖➖
 **I'm a Powerfull Group Manager Bot With Cool Modules. feel free to add me to your groups!**
 ️➖➖➖➖➖➖➖➖➖➖➖➖➖
@@ -84,7 +84,7 @@ PM_START_TEXT = """
 
 buttons = [
     [
-        InlineKeyboardButton(text="➕ Add Luna To Your group ➕", url="http://t.me/lunatapibot?startgroup=true"),
+        InlineKeyboardButton(text="➕ Add Luna To Your group ➕", url="http://t.me/Sofia_op_bot?startgroup=true"),
     ],
     [
         InlineKeyboardButton(text="About", callback_data="luna_"),
@@ -222,12 +222,14 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_photo(
-            LUNA_IMG, caption= "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+            SOFIA_HOT_IMG, caption= "Yeah, Sofia awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="https://t.me/lunaXresso")]]
+                [[InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="https://t.me/SOFIASUPPORT")],
+                 [InlineKeyboardButton(text="Moi Owner", url="tg://user?id=5029525372")],
+                ]
             ),
         )
         
@@ -398,7 +400,7 @@ def luna_about_callback(update, context):
             f"\n\n1.) first, add me to your group.\n"
             f"2.) then promote me as admin and give all permissions except anonymous admin.\n"
             f"3.) after promoting me, type /reload in group to update the admin list.\n"
-            f"4.) add @LunaAssistant to your group or type /join to invite her.\n"
+            f"4.) add [SofiaAssistent](t.me/sofia_x_assistant) to your group or type /play to invite her.\n"
             f"5.) turn on the video chat first before start to play music.\n"
             f"\n📌 if userbot doesn't join voice chat make sure voice chat is active, or type /leave then type /join again..",
             parse_mode=ParseMode.MARKDOWN,
@@ -503,7 +505,7 @@ def luna_about_callback(update, context):
                  f"\nYou can add me to your group by clicking this link and selecting the chat.\n"
                  f"\nRead Admin Permissions and Anti-spam for basic info.\n"
                  f"\nRead Detailed Setup Guide to learn about setting up the bot in detail. (Recommended)\n"
-                 f"\nIf you do need help with further instructions feel free to ask in @lunaXresso.",
+                 f"\nIf you do need help with further instructions feel free to ask in @SOFIASUPPORT.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -901,7 +903,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "I Aᴍ Aʟɪᴠᴇ 🔥")
+            dispatcher.bot.send_photo(f"@{SUPPORT_CHAT}", SOFIA_HOT_IMG, caption = "Jinda Hu Janemon 🥀",)
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
