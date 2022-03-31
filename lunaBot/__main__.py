@@ -230,7 +230,7 @@ def start(update: Update, context: CallbackContext):
     else:
         update.effective_message.reply_sticker(HYPER_OP_BOLTE)
         update.effective_message.reply_text(
-            "Hello👋, <a href='t.me/Sofia_op_bot'>Miss. Sofia</a> is Here to help you out.\n<u><i>Sofia's wake-up Time:<i></u> <code>{}</code>".format(
+            "Hello👋, <a href='t.me/Sofia_op_bot'>Miss. Sofia</a> is Here to help you out.\n<u><i>Sofia's wake-up Time:</i></u> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
