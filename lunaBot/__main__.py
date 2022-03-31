@@ -220,7 +220,7 @@ def start(update: Update, context: CallbackContext):
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
         else:
-            message.reply_sticker(HYPER_OP_BOLTE)
+            update.effective_message.reply_sticker(HYPER_OP_BOLTE)
             update.effective_message.reply_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
@@ -228,7 +228,7 @@ def start(update: Update, context: CallbackContext):
                 timeout=60,
             )
     else:
-        message.reply_sticker(HYPER_OP_BOLTE)
+        update.effective_message.reply_sticker(HYPER_OP_BOLTE)
         update.effective_message.reply_text(
             "Yeah, Sofia awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
                 uptime
