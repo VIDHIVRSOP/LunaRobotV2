@@ -83,11 +83,21 @@ HYPER_OP_BOLTE = [
 ]
 
 AD_START_TXT = [
-    "Hello👋, <a href='t.me/Sofia_op_bot'>Miss. Sofia</a> is Here to help you out.\n<u><i>Sofia's wake-up Time:</i></u>",
-    "Hoi😌, I'm <a href='t.me/Sofia_op_bot'>Sofia.</a>\nWoke-up : ",
-    "Hey🥀, My Name is <a href='t.me/Sofia_op_bot'>Miss. Sofia</a>\n<b><u>Sleeping Uptime : </u></b>",
-    "Hola🙋, MySelf <a href='t.me/Sofia_op_bot'>Miss. Sofia</a>\nWorking Uptime : ",
-    "नमस्ते🧚‍♀️, मेरा नाम <a href='t.me/Sofia_op_bot'>मिस सोफिया</a> है।\nमेरा काम करने का समय : ",
+    "Hello👋, <a href='t.me/Sofia_op_bot'>Miss. Sofia</a> is Here to help you out.\n<u><i>Sofia's wake-up Time:</i></u> <code>{}</code>.format(
+                uptime
+            )",
+    "Hoi😌, I'm <a href='t.me/Sofia_op_bot'>Sofia.</a>\nWoke-up : <code>{}</code>.format(
+                uptime
+            )",
+    "Hey🥀, My Name is <a href='t.me/Sofia_op_bot'>Miss. Sofia</a>\n<b><u>Sleeping Uptime : <code>{}</code>.format(
+                uptime
+            )</u></b>",
+    "Hola🙋, MySelf <a href='t.me/Sofia_op_bot'>Miss. Sofia</a>\nWorking Uptime : <code>{}</code>.format(
+                uptime
+            )",
+    "नमस्ते🧚‍♀️, मेरा नाम <a href='t.me/Sofia_op_bot'>मिस सोफिया</a> है।\nमेरा काम करने का समय : <code>{}</code>.format(
+                uptime
+            )",
 ]
 
 PM_START_TEXT = """
@@ -247,9 +257,7 @@ def start(update: Update, context: CallbackContext):
     else:
         update.effective_message.reply_sticker(startstickr)
         update.effective_message.reply_text(
-            f"{RANDINTT_TXT} <code>{}</code>".format(
-                uptime
-            ),
+            RANDINTT_TXT,
             parse_mode=ParseMode.HTML,
             disable_web_page_preview=True,
             )
