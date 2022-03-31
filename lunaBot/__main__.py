@@ -230,16 +230,14 @@ def start(update: Update, context: CallbackContext):
     else:
         update.effective_message.reply_sticker(HYPER_OP_BOLTE)
         update.effective_message.reply_text(
-            "Yeah, Sofia awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+            "Hello👋, <a href='t.me/Sofia_op_bot'>Miss. Sofia</a> is Here to help you out.\n<u><i>Sofia's wake-up Time:<i></u> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
-            reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="https://t.me/SOFIASUPPORT"),
-                  InlineKeyboardButton(text="Moi Owner", url="tg://user?id=5029525372"),],
-                ]
-            ),
-        )
+            disable_web_page_preview=True,
+            )
+
+       
         
 def error_handler(update, context):
     """Log the error and send a telegram message to notify the developer."""
