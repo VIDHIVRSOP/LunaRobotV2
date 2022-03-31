@@ -73,6 +73,7 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 SOFIA_HOT_IMG = "https://telegra.ph/file/579ac3eb50875d4ac4733.jpg"
+HYPER_OP_BOLTE = "CAACAgUAAx0CYt4kYwACR49iRewKKlkj6IONo5DqxSqExCBrSwACYAYAArtaIVbnpPB7CrPyAyME"
 
 PM_START_TEXT = """
 **hey I am Sofia Robot** [ㅤ](https://telegra.ph/file/579ac3eb50875d4ac4733.jpg)
@@ -219,6 +220,7 @@ def start(update: Update, context: CallbackContext):
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
         else:
+            message.reply_sticker(HYPER_OP_BOLTE)
             update.effective_message.reply_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
@@ -226,14 +228,15 @@ def start(update: Update, context: CallbackContext):
                 timeout=60,
             )
     else:
-        update.effective_message.reply_photo(
-            SOFIA_HOT_IMG, caption= "Yeah, Sofia awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+        message.reply_sticker(HYPER_OP_BOLTE)
+        update.effective_message.reply_text(
+            "Yeah, Sofia awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="https://t.me/SOFIASUPPORT")],
-                 [InlineKeyboardButton(text="Moi Owner", url="tg://user?id=5029525372")],
+                [[InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="https://t.me/SOFIASUPPORT"),
+                  InlineKeyboardButton(text="Moi Owner", url="tg://user?id=5029525372"),],
                 ]
             ),
         )
