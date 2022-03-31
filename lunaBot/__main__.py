@@ -1,3 +1,4 @@
+import random
 import importlib
 import time
 import re
@@ -73,7 +74,21 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 SOFIA_HOT_IMG = "https://telegra.ph/file/579ac3eb50875d4ac4733.jpg"
-HYPER_OP_BOLTE = "CAACAgUAAx0CYt4kYwACR49iRewKKlkj6IONo5DqxSqExCBrSwACYAYAArtaIVbnpPB7CrPyAyME"
+HYPER_OP_BOLTE = [
+    "CAACAgUAAx0CYt4kYwACR49iRewKKlkj6IONo5DqxSqExCBrSwACYAYAArtaIVbnpPB7CrPyAyME",
+    "CAACAgUAAx0CYt4kYwACR5BiRfksQXq9O6Ix0MEsB5LXTTMl2QACxAUAAlotIFaFE7PcE5sE1SME",
+    "CAACAgUAAx0CYt4kYwACR4hiRfk0wXqELkZG50jcbRHYDhi-VAACTQUAAg8SIVY7YSZiz5aZ-yME",
+    "CAACAgUAAx0CYt4kYwACR4liRfk9XU61ZOh_xDzHR1mqEhYCvgACBgUAAnwDKFYfH4sfZTceoSME",
+    "CAACAgUAAx0CYt4kYwACR4piRflDexXP5UoAAa0O-4_PVLdJbKwAAooEAAJCkChWZdGmlWGHXp0jBA",
+]
+
+AD_START_TXT = [
+    "Hello👋, <a href='t.me/Sofia_op_bot'>Miss. Sofia</a> is Here to help you out.\n<u><i>Sofia's wake-up Time:</i></u>",
+    "Hoi😌, I'm <a href='t.me/Sofia_op_bot'>Sofia.</a>\nWoke-up : ",
+    "Hey🥀, My Name is <a href='t.me/Sofia_op_bot'>Miss. Sofia</a>\n<b><u>Sleeping Uptime : </u></b>",
+    "Hola🙋, MySelf <a href='t.me/Sofia_op_bot'>Miss. Sofia</a>\nWorking Uptime : ",
+    "नमस्ते🧚‍♀️, मेरा नाम <a href='t.me/Sofia_op_bot'>मिस सोफिया</a> है।\nमेरा काम करने का समय : ",
+]
 
 PM_START_TEXT = """
 **hey I am Sofia Robot** [ㅤ](https://telegra.ph/file/579ac3eb50875d4ac4733.jpg)
@@ -189,6 +204,8 @@ def test(update: Update, context: CallbackContext):
 
 @run_async
 def start(update: Update, context: CallbackContext):
+    startstickr = random.choice(HYPER_OP_BOLTE)
+    RANDINTT_TXT = random.choice(AD_START_TXT)
     args = context.args
     uptime = get_readable_time((time.time() - StartTime))
     if update.effective_chat.type == "private":
@@ -219,8 +236,8 @@ def start(update: Update, context: CallbackContext):
             elif args[0][1:].isdigit() and "rules" in IMPORTED:
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
-        else:
-            update.effective_message.reply_sticker(HYPER_OP_BOLTE)
+        else:            
+            update.effective_message.reply_sticker(startstickr)
             update.effective_message.reply_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
@@ -228,9 +245,9 @@ def start(update: Update, context: CallbackContext):
                 timeout=60,
             )
     else:
-        update.effective_message.reply_sticker(HYPER_OP_BOLTE)
+        update.effective_message.reply_sticker(startstickr)
         update.effective_message.reply_text(
-            "Hello👋, <a href='t.me/Sofia_op_bot'>Miss. Sofia</a> is Here to help you out.\n<u><i>Sofia's wake-up Time:</i></u> <code>{}</code>".format(
+            f"{RANDINTT_TXT} <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
