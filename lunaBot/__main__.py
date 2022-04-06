@@ -660,15 +660,16 @@ def get_help(update: Update, context: CallbackContext):
                 ),
             )
             return
-        update.effective_message.reply_video(SOFIA_HOT_IMG,
-            caption="Contact me in PM to get the list of possible commands.",
+        update.effective_message.reply_text(
+            "Contact me in PM to get the list of possible commands Or open menu here.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="Hᴇʟᴘ ❔",
+                            text="Go private",
                             url="t.me/{}?start=help".format(context.bot.username),
                         ),
+                        InlineKeyboardButton(text='Open Here', callback_data='help_back'),
                     ],                   
                 ]
             ),
