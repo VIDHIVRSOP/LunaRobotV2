@@ -62,7 +62,7 @@ keywords_list = [
     "ytmusic",
 ]
 
-
+'''
 async def special_function(answers):
     buttons = InlineKeyboard(row_width=2)
     bot_state = "Dead" if not await app.get_me() else "About"
@@ -89,7 +89,7 @@ ND MY NAME IZ LODA SING GAY 😌😌😂
     )
     return answers
 
-
+'''
 
 async def inline_help_func(__help__):
     buttons = InlineKeyboard(row_width=4)
