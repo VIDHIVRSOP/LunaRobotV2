@@ -419,20 +419,20 @@ def set_about_me(update: Update, context: CallbackContext):
             )
 
 SOFIA_STATSS = "https://telegra.ph/file/f851f07dc625ff49e3f98.jpg"
-"""
+
 SOFIA_BUTTONS = [
     [
-      InlineKeyboardButton(text="Owner✨", url="tg://user?id=5029525372"),
-      InlineKeyboardButton(text="Support🧚‍♀️", url="https://t.me/SOFIASUPPORT"),
+       InlineKeyboardButton(text="Owner✨", url="tg://user?id=5029525372"),
+       InlineKeyboardButton(text="Support🧚‍♀️", url="https://t.me/SOFIASUPPORT"),
     ],
 ]
-"""
+
 @run_async
 @sudo_plus
 def stats(update: Update, context: CallbackContext):
     stats = "<b>┎─⌈ Current Sofia🥀 stats ⌋</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
-    update.effective_message.reply_photo(SOFIA_STATSS, caption=result, parse_mode=ParseMode.HTML)
+    update.effective_message.reply_photo(SOFIA_STATSS, caption=result, reply_markup=InlineKeyboardMarkup(SOFIA_BUTTONS), parse_mode=ParseMode.HTML)
 
 
 @run_async
