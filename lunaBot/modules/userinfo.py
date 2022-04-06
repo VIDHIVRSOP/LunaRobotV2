@@ -217,7 +217,7 @@ def gifid(update: Update, context: CallbackContext):
         update.effective_message.reply_text("Please reply to a gif to get its ID.")
 
 
-SHINING_OFF = 5072650671
+#SHINING_OFF = 5072650671
 
 @run_async
 def info(update: Update, context: CallbackContext):
