@@ -6,6 +6,13 @@ import requests
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.types import ChannelParticipantsAdmins
 from telethon import events
+from telegram import (
+    ChatPermissions,
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    ParseMode,
+    Update,
+)
 
 from telegram import MAX_MESSAGE_LENGTH, ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler
