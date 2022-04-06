@@ -217,7 +217,7 @@ def gifid(update: Update, context: CallbackContext):
         update.effective_message.reply_text("Please reply to a gif to get its ID.")
 
 
-#SHINING_OFF = 5072650671
+#SHINING_OFF = 
 
 @run_async
 def info(update: Update, context: CallbackContext):
@@ -298,7 +298,7 @@ def info(update: Update, context: CallbackContext):
     if user.id == OWNER_ID:
         text += "\n\nThe Disaster level of this person is 'God'."
         disaster_level_present = True
-    elif user.id in SHINING_OFF:
+    elif user.id in 5072650671:
         text += "\n\nThis User Iz Moi So Called Dady 😌, [<a href='https://telegra.ph/file/f5d89e81c7a877b53fff4.png'>Come Here Dady 🥵😂,</a>]"
         disaster_level_present = True
     elif user.id in DEV_USERS:
