@@ -4,11 +4,11 @@ from lunaBot import pbot as app
 from lunaBot.utils.inlinefuncs import *
 
 __mod_name__ = "Inline"
-__help__ = """
+'''__help__ = """
 commands can be used by anyone in a group via inline.
 
 Usage: @lunatapibot <func> <query>"""
-
+'''
 
 @app.on_inline_query()
 async def inline_query_handler(client, query):
