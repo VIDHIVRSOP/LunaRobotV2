@@ -63,6 +63,34 @@ keywords_list = [
 ]
 
 
+async def special_function(answers):
+    buttons = InlineKeyboard(row_width=2)
+    bot_state = "Dead" if not await app.get_me() else "About"
+    buttons.add(
+        InlineKeyboardButton("Biggest Gay in the World", url=f"tg://settings"),        
+    )
+
+    msg = f"""
+TO HELLOW GUYS MAI AAP SB KO BTANA CHAHTA HU KI MAI
+YEK BHUT BDA CHUTIYA HU NIHATI CHUTIYA HU MAI 🥴🥴
+
+ND MY NAME IZ LODA SING GAY 😌😌😂
+"""
+    answers.append(
+        InlineQueryResultArticle(
+            title="Something Special",
+            description="Something which will chnge ur way of thinking for 😌",
+            thumb_url="https://telegra.ph/file/f5d89e81c7a877b53fff4.png",
+            input_message_content=InputTextMessageContent(
+                msg, disable_web_page_preview=True
+            ),
+            reply_markup=buttons,
+        )
+    )
+    return answers
+
+
+
 async def inline_help_func(__help__):
     buttons = InlineKeyboard(row_width=4)
     buttons.add(
@@ -82,7 +110,7 @@ async def inline_help_func(__help__):
             input_message_content=InputTextMessageContent(
                 "Click a button to get started."
             ),
-            thumb_url="https://telegra.ph/file/a03660425cd749faf0a4a.jpg",
+            thumb_url="https://telegra.ph/file/f851f07dc625ff49e3f98.jpg",
             reply_markup=buttons,
         ),
     ]
@@ -94,27 +122,27 @@ async def alive_function(answers):
     buttons = InlineKeyboard(row_width=2)
     bot_state = "Dead" if not await app.get_me() else "Alive"
     buttons.add(
-        InlineKeyboardButton("Main bot", url=f"https://t.me/lunatapibot"),
+        InlineKeyboardButton("Main bot", url=f"tg://user?id=5098541156"),
         InlineKeyboardButton(
             "Go Inline!", switch_inline_query_current_chat=""
         ),
     )
 
     msg = f"""
-**[Luna❤️](https://t.me/lunatapibot):**
+**[Sofia🧚‍♀️](https://t.me/Sofia_op_bot):**
 **RoBot:** `{bot_state}`
 **UserBot:** `Alive`
 **Python:** `{pyver.split()[0]}`
 **Pyrogram:** `{pyrover}`
 **MongoDB:** `{mongover}`
 **Platform:** `{sys.platform}`
-**Profiles:** [BOT](https://t.me/lunatapibot) | [UBOT](https://t.me/tdrki_1)
+**Profiles:** [BOT](https://t.me/Sofia_op_bot) | [UBOT](https://t.me/SHINING_OFF)
 """
     answers.append(
         InlineQueryResultArticle(
             title="Alive",
-            description="Check Luna Stats",
-            thumb_url="https://telegra.ph/file/a03660425cd749faf0a4a.jpg",
+            description="Check Sofia Stats",
+            thumb_url="https://telegra.ph/file/f851f07dc625ff49e3f98.jpg",
             input_message_content=InputTextMessageContent(
                 msg, disable_web_page_preview=True
             ),
@@ -128,20 +156,20 @@ async def about_function(answers):
     buttons = InlineKeyboard(row_width=2)
     bot_state = "Dead" if not await app.get_me() else "About"
     buttons.add(
-        InlineKeyboardButton("Support", url=f"https://t.me/lunaXresso"),
-        InlineKeyboardButton("Channel", url=f"https://t.me/zeinproject"),
+        InlineKeyboardButton("Support", url=f"https://t.me/SOFIASUPPORT"),
+        InlineKeyboardButton("Channel", url=f"https://t.me/SOFIA_X_UPDATES"),
     )
 
     msg = f"""
-[Luna ✨](https://t.me/lunatapibot) 
-   Maintained by [X](t.me/tdrki_1)
+[Miss Sofia 🧚‍♀️](https://t.me/Sofia_op_bot) 
+   Maintained by [XXX](https://t.me/SHINING_OFF)
 Built with using python-telegram-bot v13.7 Running on Python 3.9.7
 """
     answers.append(
         InlineQueryResultArticle(
             title="About",
-            description="About Luna",
-            thumb_url="https://telegra.ph/file/a03660425cd749faf0a4a.jpg",
+            description="About Sofia",
+            thumb_url="https://telegra.ph/file/f851f07dc625ff49e3f98.jpg",
             input_message_content=InputTextMessageContent(
                 msg, disable_web_page_preview=True
             ),
